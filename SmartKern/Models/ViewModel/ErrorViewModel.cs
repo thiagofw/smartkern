@@ -1,4 +1,4 @@
-namespace SmartKern.Models;
+namespace SmartKern.Models.ViewModel;
 
 public class ErrorViewModel
 {

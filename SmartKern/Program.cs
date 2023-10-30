@@ -1,3 +1,4 @@
+using LojaWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using MySql.EntityFrameworkCore.Extensions;
 using SmartKern.Data;
@@ -13,6 +14,16 @@ builder.Services.AddEntityFrameworkMySQL()
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+//Inject seeding service
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    SeedingService.Initialize(services);
+}
+
+//end injection seeding service
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

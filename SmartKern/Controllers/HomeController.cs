@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using SmartKern.Models;
+using SmartKern.Models.ViewModel;
 
 namespace SmartKern.Controllers;
 
